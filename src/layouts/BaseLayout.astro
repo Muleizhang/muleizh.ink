@@ -4,6 +4,9 @@ import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
 import config from '@/site-config'
 
+// Vercel speed insights
+import SpeedInsights from "@vercel/speed-insights/astro" // 👈 步骤 1: 导入
+
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseLayout /> component.
 import '@/assets/styles/app.css'
@@ -58,5 +61,7 @@ const {
         ) !important;
       }
     </style>
+
+    <SpeedInsights /> {/* 👈 步骤 2: 渲染组件 */}
   </body>
 </html>
